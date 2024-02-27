@@ -1,0 +1,34 @@
+case class Car(`times`: Array[Double])
+
+class RaceTimeCalculator(raceTimes: Array[Car]) {
+  def averageTimePerCar(): Map[String, Double] = {
+    raceTimes.map(car => car.times.sum / car.times.length).zipWithIndex
+      .map { case (averageTime, index) => s"Car${index + 1}" -> averageTime }
+      .toMap
+  }
+
+  def averageTimePerRound(): Array[Double] = {
+    raceTimes.headOption.map(_.times.indices.map(roundIndex =>
+      raceTimes.map(_.times(roundIndex)).sum / raceTimes.length
+    ).toArray).getOrElse(Array.empty[Double])
+  }
+}
+
+// Example usage
+val cars = Array(
+  Car(Array(10.0, 11.0, 12.0)),
+  Car(Array(9.0, 10.0, 11.0)),
+  Car(Array(11.0, 12.0, 13.0))
+)
+
+val calculator = new RaceTimeCalculator(cars)
+
+val averageTimePerCar = calculator.averageTimePerCar()
+averageTimePerCar.foreach { case (car, time) =>
+  println(s"Average time for $car: $time")
+}
+
+val averageTimesPerRound = calculator.averageTimePerRound()
+averageTimesPerRound.zipWithIndex.foreach { case (averageTime, round) =>
+  println(s"Average time for Round ${round + 1}: $averageTime")
+}
