@@ -33,11 +33,11 @@ Die Unveränderlichkeit kann dabei - wie Sie bereits gelernt haben - auf zwei Ar
  - Rekursion: Die Methode wird rekursiv aufgerufen und mit jedem neuen Aufruf werden neue "Kopien" der lokalen Variablen angelegt.
 Wichtig ist, dass die Funktionen stets via call by value aufgerufen werden (und nicht call by reference), damit eine Kopie der Daten übergeben wird und nicht nur eine Referenz auf das Original. Funktionale Programmiersprachen können den call by reference auch ganz verhindern, um die Entwickler beim richtigen Anwenden des funktionalen Paradigmas zu unterstützen.
 
-#### Call by Value
+### Call by Value
 Call by Value heisst das der Methode die Parameter immer als Kopie der Originaldaten übergeben werden. Das hat zur folge das wenn diese Daten in der Funktion angepasst werden, es keine Seiteneffekte auf die Aussenstehende Variabeln hat.
-#### Call by Reffernece
+### Call by Reffernece
 Hier ist das Gegenteil der Fall, hier wird der Mehtode eine Refferenz auf eine Varibale übergeben, wird nun dieser Parameter verändert wird nicht nur in dem spezifischen Methodenkontext der Wert verändert, sonder auch ausserhalb.
-#### Lazy vs Eager Evaluation
+### Lazy vs Eager Evaluation
 Der Unterschied ist, dass bei der Lazyevaluation Ausdrücke erst dann evaluiert werden wenn sie gebraucht werden. Bei der Eagerevaluation werden sie sofort Ausgewertet.
 Codebeispiel(Lazy):
 ```
