@@ -20,7 +20,7 @@ let tree = {
         {
             value: 'B',
             children: [
-                { value: 'D', children: [] },
+                { value: 'D'},
                 { value: 'E', children: [] }
             ]
         },
