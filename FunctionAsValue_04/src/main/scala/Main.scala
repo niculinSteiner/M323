@@ -7,6 +7,8 @@ object Main {
     FilterTasks.run();
     FilterMapTasks.run();
     FoldLeftTasks.run();
+    FlatMapTasks.run();
+    ForComprehensionsTasks.run();
   }
 
 
