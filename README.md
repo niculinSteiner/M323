@@ -9,7 +9,7 @@
 
 ------
 ### Teil 2
-
+7. [Functions as Value](#function-as-value)
 ---
 
 ### Imperative vs. Deklarative
@@ -86,4 +86,7 @@ console.log("Start");
 let resultFunc = lazyAdd(3, 4); // "Adding" wird noch nicht ausgegeben
 console.log("Middle");
 let result = resultFunc(); // "Adding" wird jetzt ausgegeben
-console.log(result); // 7
+console.log(result); //
+```
+### [Function as Value](#function-as-value)
+
