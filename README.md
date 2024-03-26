@@ -1,4 +1,4 @@
-### Inhaltsverzeichnis
+### Inhaltsverzeichnis - Teil 1
 
 1. [Imperative vs. Deklarative](#imperative-vs-deklarative)
 2. [Pure Functions](#pure-functions)
@@ -6,6 +6,9 @@
 4. [Call by Value](#call-by-value)
 5. [Call by Reference](#call-by-reference)
 6. [Lazy vs. Eager Evaluation](#lazy-vs-eager-evaluation)
+
+------
+### Teil 2
 
 ---
 
