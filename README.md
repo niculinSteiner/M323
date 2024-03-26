@@ -134,3 +134,13 @@ val doubled = for (n <- numbers) yield n * 2
 ```
 Hier iterieren wir über numbers und verdoppeln jeden Wert. Das yield-Schlüsselwort sammelt die Ergebnisse und gibt eine neue Liste zurück. Das obige Beispiel entspricht numbers.map(n => n * 2)
 
+### Weitere Datentypen
+- Liste
+    - Speicher alle Values so wie sie hinzugefügt wurden. 
+- Set
+    -  Während eine Liste alle Elemente in der Reihenfolge speichert, wie sie hinzugefügt wurden, haben Sets nur unique values, d.h. jedes Element kommt nur einmal vor.    
+- Map
+    - Key - Value 
+- Tupel
+    - Ein Tupel ist ähnlich wie eine Liste, aber im Gegensatz dazu können Tupel verschiedene Typen von Elementen enthalten, und die Anzahl der Elemente im Tupel ist festgelegt und kann nicht geändert werden.
+Wir können unterschiedliche Collections in einem for comprehension ausführen. Die Ausgabe entspricht dem Collection Type, der als erster in der for comprehension bearbeitet wird.
