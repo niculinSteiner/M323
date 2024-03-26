@@ -89,4 +89,48 @@ let result = resultFunc(); // "Adding" wird jetzt ausgegeben
 console.log(result); //
 ```
 ### [Function as Value](#function-as-value)
+- Java Streams: Beliebt für funktionale Paradigmen in Java, aber oft umfangreicher in der Code-Struktur.
+- Scala: Bietet Unveränderlichkeit (immutable lists) und prägnanten, deklarativen Code.
+#### Heigher Order Functions (HOF)
+Eine HOF (High Order Function) in Scala ist einfach eine Funktion, die eine andere Funktion als Argument annimmt und/oder eine Funktion zurückgibt.
+Bsp:
+```
+def applyOperation(numbers: List[Int], operation: Int => Int): List[Int] = {
+  numbers.map(operation)
+}
+
+```
+#### Map, Filter, Foldleft, FlatMap
+- Die *map-Funktion* ist ein fundamentales Konzept in der funktionalen Programmierung. Sie ermöglicht es, eine Operation auf jedes Element einer Liste (oder einer anderen Collection) anzuwenden und daraus eine neue Liste mit den bearbeiteten Elementen zu erstellen.
+- Die *filter-Funktion* ist ein weiteres zentrales Konzept in der funktionalen Programmierung. Sie ermöglicht es, Elemente aus einer Liste (oder einer anderen Collection) auszuwählen, die eine bestimmte Bedingung erfüllen, und daraus eine neue Liste mit diesen Elementen zu erstellen.
+- Die *foldLeft-Funktion* ist ein wichtiges Werkzeug in der funktionalen Programmierung. Sie wird verwendet, um eine Liste (oder eine andere Sammlung) von Elementen zu einem einzelnen Wert zu reduzieren, indem sie eine Akkumulatorfunktion sequenziell auf die Elemente der Liste anwendet.
+- Die Operation, die von *flatMap* durchgeführt wird, ist somit eine Kombination aus map (Anwendung einer Funktion auf jedes Element) und flatten (Vereinigung aller resultierenden Listen in eine einzige Liste).
+
+#### First-Class Citizens
+Das bedeutet, dass Funktionen wie jede andere Variable behandelt werden können. Sie können als Argumente an andere Funktionen übergeben, von Funktionen zurückgegeben und in Variablen gespeichert werden. Ein besonders mächtiges Konzept ist dabei die Möglichkeit, dass Funktionen andere Funktionen als Rückgabewert haben. 
+Das Zurückgeben von Funktionen durch andere Funktionen ermöglicht:
+- Höhere Abstraktionsstufen: Erstellung komplexerer Funktionen durch Kombination einfacherer Funktionen.
+- Currying und Partial Application: Schaffung von Funktionen, die einige Argumente vorab festlegen und den Rest bei späteren Aufrufen erwarten.
+- Funktionale Komposition: Zusammensetzung mehrerer Funktionen zu einer neuen Funktion.
+Dieses Konzept wird vorallem bei Eventhandling(Funktionen, die aufgrund bestimmter Ereignisse aktiviert werden.) oder Callbacks(Funktionen, die als Parameter übergeben und später ausgeführt werden.) angewendet.
+
+#### Currying
+Currying ist ein Konzept in der funktionalen Programmierung, bei dem eine Funktion mit mehreren Argumenten in eine Folge von Funktionen umgewandelt wird, die jeweils genau ein Argument nehmen. Dies ermöglicht eine höhere Flexibilität und Modularität im Code.
+Currying bietet folgende Vorteile:
+- Teilweise Anwendung: Ermöglicht es, einige Argumente einer Funktion vorab zu binden und die restlichen später zu übergeben.
+- Funktionale Komposition: Vereinfacht das Zusammensetzen von Funktionen.
+- Code-Wiederverwendbarkeit: Fördert das Schreiben von generischen und wiederverwendbaren Funktionen.
+Wird angewendet bei:
+- Dynamische Funktionsgenerierung: Erstellung spezifischer Funktionen basierend auf Kontext oder Bedingungen.
+- Asynchrone Programmierung: Verzögerung der Ausführung von Funktionen bis alle erforderlichen Argumente verfügbar sind.
+
+#### For Comprehension
+For Comprehensions in Scala sind eine mächtige und ausdrucksstarke Art, über Collections (wie Listen, Optionen, Futures usw.) zu iterieren, Transformationen durchzuführen und Werte zu filtern. Sie sind "syntactic suger", die das Schreiben von verschachtelten Funktionsaufrufen wie map, flatMap und filter vereinfachen. For Comprehensions verbessern die Lesbarkeit des Codes, indem sie eine deklarative Art der Datenmanipulation ermöglichen.
+Bsp:
+```
+val numbers = List(1, 2, 3, 4, 5)
+val doubled = for (n <- numbers) yield n * 2
+
+```
+Hier iterieren wir über numbers und verdoppeln jeden Wert. Das yield-Schlüsselwort sammelt die Ergebnisse und gibt eine neue Liste zurück. Das obige Beispiel entspricht numbers.map(n => n * 2)
 
