@@ -1,4 +1,3 @@
-
 object Main {
   def main(args: Array[String]): Unit = {
     //task 1 - init map
@@ -24,6 +23,7 @@ object Main {
     println(s"task 6:")
     val notHereValue: Option[String] = m4.get("key3")
     println(notHereValue)
+    TupelFunctions.run();
   }
 
 }
