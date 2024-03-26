@@ -10,6 +10,7 @@
 ------
 ### Teil 2
 7. [Functions as Value](#function-as-value)
+8. [Weitere Datentypen](#weitere-datentypen)
 ---
 
 ### Imperative vs. Deklarative
@@ -134,7 +135,7 @@ val doubled = for (n <- numbers) yield n * 2
 ```
 Hier iterieren wir über numbers und verdoppeln jeden Wert. Das yield-Schlüsselwort sammelt die Ergebnisse und gibt eine neue Liste zurück. Das obige Beispiel entspricht numbers.map(n => n * 2)
 
-### Weitere Datentypen
+### [Weitere Datentypen](#weitere-datentypen)
 - Liste
     - Speicher alle Values so wie sie hinzugefügt wurden. 
 - Set
