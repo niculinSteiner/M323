@@ -1,3 +1,5 @@
+package scala
+
 case class Course(title: String, students: List[String])
 
 case class CourseSubscriptions(title: String, totalStudents: Int)
